@@ -1,23 +1,13 @@
 <script>
-  import { onMount } from "svelte";
-
-  let issLocation;
-
-  onMount(async () => {
-    setInterval(async () => {
-      issLocation = await getIssLocation();
-    }, 1000);
-  });
-  async function getIssLocation() {
-    let res = await fetch("http://api.open-notify.org/iss-now.json");
-    let data = await res.json();
-    return data;
-  }
+  export let issLocation;
 </script>
 
 <style>
-  h2 {
+  h2,
+  p {
     text-align: center;
+  }
+  h2 {
     text-transform: uppercase;
     font-weight: 100;
   }
@@ -26,7 +16,9 @@
 <div>
   {#if issLocation}
     <h2>ISS Coordinates</h2>
-    <i>latitude: {issLocation.iss_position.latitude}</i>
-    <i>longitude: {issLocation.iss_position.longitude}</i>
+    <p>
+      <i>latitude: {issLocation.iss_position.latitude}</i>
+      <i>longitude: {issLocation.iss_position.longitude}</i>
+    </p>
   {/if}
 </div>
