@@ -6,7 +6,7 @@
 
 <p>
   Data from
-  <a href="http://open-notify.org/">Open Notify</a>
+  <a href="https://open-notify.org/">Open Notify</a>
   presented with
   <a href="https://sapper.svelte.dev/">Sapper</a>
   . Coded by
