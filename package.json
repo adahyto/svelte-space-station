@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "svelte",
+  "description": "svelte",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
@@ -15,7 +15,7 @@
   "dependencies": {
     "compression": "^1.7.1",
     "mapbox-gl": "^1.11.1",
-    "polka": "next",
+    "polka": "^0.5.2",
     "sirv": "^1.0.0"
   },
   "devDependencies": {
