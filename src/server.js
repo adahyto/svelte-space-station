@@ -3,8 +3,9 @@ import polka from 'polka';
 import compression from 'compression';
 import * as sapper from '@sapper/server';
 
-const { PORT, NODE_ENV } = process.env;
+const { NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
+const PORT = process.env.PORT || 8080;
 
 polka() // You can also use Express
 	.use(
