@@ -11,12 +11,15 @@
 
   const popup = new mapbox.Popup({ offset: 25 }).setText(label);
   let marker;
-  if (marker) {
-    marker.setLngLat([lon, lat]);
-  } else {
-    marker = new mapbox.Marker()
-      .setLngLat([lon, lat])
-      .setPopup(popup)
-      .addTo(map);
-  }
+
+  setInterval(() => {
+    if (marker) {
+      marker.setLngLat([lon, lat]);
+    } else {
+      marker = new mapbox.Marker()
+        .setLngLat([lon, lat])
+        .setPopup(popup)
+        .addTo(map);
+    }
+  }, 200);
 </script>
