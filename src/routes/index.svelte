@@ -21,27 +21,6 @@
   });
 </script>
 
-<style>
-  h1 {
-    font-size: 2em;
-    text-transform: uppercase;
-    font-weight: 100;
-    text-align: center; 
-  }
-
-  .svelte {
-    color: #ff3e00;
-  }
-
-  .index_section {
-    margin-top: 45px;
-  }
-
-  .index_section_map-wrapper {
-    height: 350px;
-  }
-</style>
-
 <svelte:head>
   <title>Svelte Space Station</title>
 </svelte:head>
@@ -63,19 +42,45 @@
     {/if}
     <ISSCords {issLocation} />
   </section>
+  {#if !issLocation}
+    <Loading />
+  {/if}
   {#if issLocation}
     <section class="index_section">
       <div class="index_section_map-wrapper">
         <Map
           lat={issLocation.iss_position.latitude}
           lon={issLocation.iss_position.longitude}
-          zoom={1}>
+          zoom={1}
+        >
           <MapMarker
             lat={issLocation.iss_position.latitude}
             lon={issLocation.iss_position.longitude}
-            label="International Space Station" />
+            label="International Space Station"
+          />
         </Map>
       </div>
     </section>
   {/if}
 </main>
+
+<style>
+  h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .svelte {
+    color: #ff3e00;
+  }
+
+  .index_section {
+    margin-top: 45px;
+  }
+
+  .index_section_map-wrapper {
+    height: 350px;
+  }
+</style>
